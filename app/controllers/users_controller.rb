@@ -46,6 +46,9 @@ class UsersController < ApplicationController
         @flag=1
       end
     end
+    if current_user.points < @prepoints.to_i
+      @flag=2
+    end
     if @flag==1
       @user.points+=@prepoints.to_i
       current_user.points-=@prepoints.to_i

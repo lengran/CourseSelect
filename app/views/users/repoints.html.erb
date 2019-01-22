@@ -8,10 +8,13 @@
                 <% if @flag==0%>
                     没有该用户，请检查输入邮箱是否正确
                     <%else%>
-                    转赠失败，该功能正在维护中 QAQ<br>
+                    <% if @flag==2%>
+                    要转增的意愿值超过已有意愿值！
+                    <%else%>
+                    转赠成功！<br>
                     <b>我的意愿值：<%=current_user.points%></b>
                     <%end%>
-
+                    <%end%>
             </div>
         </div>
     </div>
